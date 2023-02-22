@@ -12,14 +12,20 @@
             <button type="button" (click)="deleteJob(jobIndex)" class="btn btn-danger">X</button> 
             <div class="form-group mt-2">
               <label for="">Enter Your Full Name</label>
-              <input type="text" class="form-control" formControlName="yourFullName">
+              <input type="text" class="form-control" id="yourFullName" name="yourFullName" placeholder="Your Full name" formControlName="yourFullName" >
+              <!-- <span *ngIf="yourFullName && yourFullName.invalid && yourFullName.touched" >Enter your Name</span> -->
             </div>
   
             <div class="form-group mt-2">
               <label for="">Enter Your Age</label>
-              <input type="number" class="form-control" formControlName="Age">
+              <input type="number" class="form-control" formControlName="Age"> 
             </div>
   
+            <div class="form-group mt-2">
+              <label for="">Image url</label>
+              <input type="text" class="form-control" formControlName="Url">
+            </div>
+
             <div class="form-group mt-2">
               <label for="">Enter Your PhoneNumber</label>
               <input type="number" class="form-control" formControlName="phoneNumber">
@@ -67,6 +73,7 @@
       <button
       *ngIf="show"
       type="submit" class="btn btn-primary col-md-6 d-block m-auto mt-3 mb-4"  
+      [disabled]="jobForm.invalid"
       ><a 
 
        >  Save </a> </button>

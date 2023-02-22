@@ -1,4 +1,4 @@
-  <main class="background"> 
+  <main class="background" *ngIf="!isSignedIn"> 
   <div class="form-main-container back SignIn" id="form-main-container"  *ngIf="!isSignedIn">
     <form action="" class="log-in-form" id="form"  >
       <img src="../../../assets/images/curriculum.png" alt="logo" class="log-form-gif">
@@ -16,12 +16,7 @@
       <p class="form-signup-description">By clicking Create Account, you are indicating that you have read
         and acknowledge the Terms and Conditions</p>
     </form>
-  </div> 
-
-
-
-
-
+  </div>  
 <ng-container *ngIf="!isSignedIn"> 
   <div class="form-main-container1 back1" id="form-main-container1" *ngIf="show"  >
     <form action="" class="log-in-form log-in-form1" id="form"  >

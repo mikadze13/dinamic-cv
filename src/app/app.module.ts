@@ -10,6 +10,7 @@ import { CvmakerComponent } from './compoonents/cvmaker/cvmaker.component';
 import { RouterModule } from '@angular/router';
 import { AuthComponent } from './compoonents/auth/auth.component';
 import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.component';  
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.c
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule ,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     RouterModule,

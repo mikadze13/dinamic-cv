@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 import { Router , ParamMap, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { FirebaseService } from 'src/app/service/firebase.service';
 
@@ -9,6 +9,7 @@ import { FirebaseService } from 'src/app/service/firebase.service';
   styleUrls: ['./cvmaker.component.css']
 })
 export class CvmakerComponent {
+  
   jobForm!: FormGroup;
   show:boolean=false;
   selectedFile!:File;
@@ -30,15 +31,26 @@ export class CvmakerComponent {
   // newJob() function returns new template that allows to add a new job
   newJob(): FormGroup {
     return this.fBuilder.group({ 
-      yourFullName:'',
-      Age:'',
-      phoneNumber:'',
-      email:'',
-      companyName: '',
-      companyWorkDescription: '',
+      yourFullName:new FormControl('',[Validators.required]),
+      Age:new FormControl('',[Validators.required]),
+      Url:new FormControl('',[Validators.required]),
+      phoneNumber:new FormControl('',[Validators.required]),
+      email:new FormControl('',[Validators.email]),
+      companyName: new FormControl('',[Validators.required]),
+      companyWorkDescription: new FormControl('',[Validators.required]),
       workExps: this.fBuilder.array([])
     })
   }
+  // required input
+  // get yourFullName(){
+  //   // return this.jobForm.value.jobs[0].get('yourFullName')
+  //   return this.jobForm.value.get('yourFullName')
+  // }
+  // get Age(){
+  //   // return this.jobForm.value.jobs[0].get('yourFullName')
+  //   return this.jobForm.value.get('Age')
+  // }
+
   // getWorkExps()function returns already added job index 
   getWorkExps(jobIndex: number): FormArray {
     return this.getjobs().at(jobIndex).get('workExps') as FormArray
@@ -50,10 +62,10 @@ export class CvmakerComponent {
       startAt: '',
       endAt: ''
     })
-  }
+  } 
   // brings existing arrays from getJobs() and adds in newJobs
   addNewJob() {
-    this.getjobs().push(this.newJob())
+    this.getjobs().push(this.newJob()) 
     this.show=true
   }
   // remove job funciton
@@ -75,26 +87,32 @@ export class CvmakerComponent {
   // button that prints final array
   onFormSubmit(){  
     console.log(this.jobForm.value)
-     this.router.navigate(['/cvprofile'],{queryParams:{
+    // const queryParams:any ={}
+    // queryParams.myArray = JSON.stringify(this.jobForm.value.jobs[0].workExps[0])
+    
+
+    // Navigate to component B
+    // const NavigationExtras:NavigationExtras = {
+    //   queryParams
+    // }
+    // const workexpArray=this.jobForm.value.jobs[0].workExps[0].workExps[0]
+    this.router.navigate(['/cvprofile'],{queryParams:{
       name:this.jobForm.value.jobs[0].yourFullName,
       age:this.jobForm.value.jobs[0].Age,
+      PhotoUrl:this.jobForm.value.jobs[0].Url,
       phoneNumber:this.jobForm.value.jobs[0].phoneNumber,
       email:this.jobForm.value.jobs[0].email,
       companyName:this.jobForm.value.jobs[0].companyName,
       companyWorkDescription:this.jobForm.value.jobs[0].companyWorkDescription,
+
+      // workExps:JSON.stringify(this.jobForm.value.jobs[0].workExps[0].workExps[0])
+      // workExps:...workexpArray
+      // myArray:this.jobForm.value.jobs[0].workExps[0]
       // position:this.jobForm.value.jobs[0].workExps[0].position,
       // startDate:this.jobForm.value.jobs[0].workExps[0].startAt,
-      // endDate:this.jobForm.value.jobs[0].workExps[0].endAt
-      
-     }})
-    // this.router.queryParams.subscribe(params =>{
-    //   this.jobForm.value.yourFullName = params['name'];
-    //   this.jobForm.value.Age = params['age'];
-      
-    // })
-    // this.router.snapshot.paramMap.get()
-    console.log(this.router)
-    // this.router
+      // endDate:this.jobForm.value.jobs[0].workExps[0].endAt 
+     }})   
+    console.log(this.router) 
     console.log(this.SendInfo , this.jobForm.value)
     this.jobForm.reset()
   }

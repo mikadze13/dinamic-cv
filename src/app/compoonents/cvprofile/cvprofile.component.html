@@ -1,4 +1,10 @@
 <button [routerLink]="[ '/auth' ]">back</button>
-<div class="main">
-
+<div class="main"   *ngFor="let i of array">
+    <p>{{i.name}}</p>
+    <p>{{i.age}}</p>
+    <img [src]="i.PhotoUrl" alt="not found">
+    <p>{{i.phoneNumber}}</p>
+    <p>{{i.email}}</p>
+    <p>{{i.companyName}}</p>
+    <p>{{i.companyWorkDescription}}</p>
 </div>
