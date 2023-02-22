@@ -1,0 +1,76 @@
+ 
+<button (click)="logout()">LogOut</button>
+<section class="col-md-9 m-auto " >
+    <br><br><br>
+    <h1 class="text-center">Create Your CV</h1>
+    <br><br>
+    <form [formGroup]="jobForm" (ngSubmit)="onFormSubmit()" >
+      <button type="button" (click)="addNewJob()" class="btn btn-primary d-block m-auto add" >Add New Job</button>
+      <div formArrayName="jobs">
+        <div *ngFor="let job of getjobs().controls; let jobIndex=index">
+          <div [formGroupName]="jobIndex" class="job">
+            <button type="button" (click)="deleteJob(jobIndex)" class="btn btn-danger">X</button> 
+            <div class="form-group mt-2">
+              <label for="">Enter Your Full Name</label>
+              <input type="text" class="form-control" formControlName="yourFullName">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="">Enter Your Age</label>
+              <input type="number" class="form-control" formControlName="Age">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="">Enter Your PhoneNumber</label>
+              <input type="number" class="form-control" formControlName="phoneNumber">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="">Enter Your Email</label>
+              <input type="email" class="form-control" formControlName="email">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="">Enter Company Name</label>
+              <input type="text" class="form-control" formControlName="companyName">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="">Enter Company Work Descritpion</label>
+              <input type="text" class="form-control" formControlName="companyWorkDescription">
+            </div>
+            <button type="button" (click)="addNewWorkExp(jobIndex)" class="btn btn-primary">Add Experience</button>
+            <div formArrayName="workExps">
+              <div *ngFor="let exps of getWorkExps(jobIndex).controls; let expIndex=index">
+                <div [formGroupName]="expIndex"> 
+                  <button type="button" (click)="deleteJobExp(jobIndex,expIndex)" class="btn btn-danger">Delete Experience</button>
+                  <div class="form-group mt-2">
+                    <label for="">Position</label>
+                    <input type="text" class="form-control" formControlName="position">
+                  </div>
+  
+                  <div class="form-group mt-2">
+                    <label for="">Start Date</label>
+                    <input type="Date" class="form-control" formControlName="startAt">
+                  </div>
+  
+                  <div class="form-group mt-2">
+                    <label for="">End Date</label>
+                    <input type="Date" class="form-control" formControlName="endAt">
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+      *ngIf="show"
+      type="submit" class="btn btn-primary col-md-6 d-block m-auto mt-3 mb-4"  
+      ><a 
+
+       >  Save </a> </button>
+        
+    </form>
+  </section> 
+  

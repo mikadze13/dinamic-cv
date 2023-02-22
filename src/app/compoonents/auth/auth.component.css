@@ -1,0 +1,307 @@
+.background{
+    width: 100%;
+    height: 100%; 
+    background-color: white;
+     
+}
+.form-main-container { 
+    width: 100%;
+    margin: auto; 
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    height: 100%;  
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+.form-main-container1{
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0; 
+    height: 100%;  
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: #000000a3;
+    
+}
+.close{ 
+    cursor: pointer;
+}
+.form-main-container1{
+    
+}
+/* scrollbar styles end */
+.log-in-form {
+    width: 460px;
+    position: relative;
+    height: auto;
+    background: transparent;
+    border: 1px solid #323b43; 
+    border-radius: 13px; 
+    padding: 30px 40px 40px 40px; 
+     
+} 
+
+@-webkit-keyframes cssAnimation {
+    from {
+        -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(0px);
+    }
+
+    to {
+        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    }
+}
+.form-signup-description{
+    text-align: center;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    font-weight: 500;
+    color: #7B8390;
+    float: left;
+}
+.log-in-form .log-form-gif{ 
+} 
+
+.submit {
+    background: #37ae65; 
+    border-radius: 8px;
+    width: 100%;
+    height: 44px;
+
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-top: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    text-align: center;
+    cursor: pointer;
+}
+ 
+.form-h2 { 
+    font-style: normal;
+    font-weight: 700;
+    width: 100%;
+    font-size: 22px;
+    line-height: 28px;
+    
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px !important;
+    margin: 0;
+}
+
+.form-p { 
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 10px;
+    margin-bottom: 33px;
+    margin-top: 15px !important;
+}
+
+.forgot-password-link,
+.sign-up-link {
+    color: #5A4CFF !important;
+}
+
+.checkbox1 {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+    padding-left: 17px;
+}
+
+#checkbox1 {
+    margin: 0;
+    background: #5A4CFF;
+    box-shadow: 0px 0px 12px #5A4CFF;
+    border-radius: 2px;
+}
+
+.checkbox-p {
+    margin: 0;
+    color: white;
+    margin-left: 5px !important;
+}
+
+#email { 
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #252e36;
+    outline: none;
+    width: 100%;
+    height: 46px ;
+    padding: 0 15px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: all .2s ease-in-out;
+
+}
+#name{
+    border: none;
+    border-radius: 6px;
+    border-radius: 1px solid #252e36;
+    outline: none;
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    transition: all .2s ease-in-out;
+} 
+#username{ 
+    border: none;
+    border-radius: 6px; 
+    border-radius: 1px solid #252e36;
+    outline: none;
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    transition: all .2s ease-in-out;
+}
+ 
+.currency-country-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+#Country{ 
+    border: none;
+    border-radius: 6px;
+    background-color: #252e36;
+    outline: none;
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    transition: all .2s ease-in-out;
+    
+}
+.currency-country-child{
+    width: 180px;
+}
+.currency-country-child2{
+    width: 180px;
+}
+#Currency{ 
+    border: none;
+    border-radius: 6px;
+    background-color: #252e36;
+    outline: none; 
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    transition: all .2s ease-in-out;
+    margin: 0 0 16px 0;
+}
+ 
+#password { 
+    border-radius: 6px; 
+    border: none; 
+    border: 1px solid #252e36;
+    outline: none;
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: black;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+    margin: 0 0 16px 0;
+} 
+.name-label{
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    
+    position: relative;
+    margin: 0 0 8px 0;
+    font-weight: bold !important;
+} 
+.password-label {
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    
+    position: relative;
+    margin: 0 0 8px 0;
+    font-weight: bold !important;
+}
+.username-label{
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    
+    position: relative;
+    margin: 0 0 8px 0;
+    font-weight: bold !important;
+}
+.email-label {
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    
+    position: relative;
+    margin: 0 0 8px 0;
+    font-weight: bold !important;
+} 
+.phone-number-child .country-code-label{
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    
+    position: relative;
+    margin: 0 0 8px 0;
+}
+
+/* remove arrow from input */
+
+/* Chrome, Safari, Edge, Opera */
+#Phone-number::-webkit-outer-spin-button,
+#Phone-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#Phone-number[type=number] {
+  -moz-appearance: textfield;
+}
+/* remove arrow from input end */
+/* form styles end */
