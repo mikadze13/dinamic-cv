@@ -12,38 +12,54 @@
             <button type="button" (click)="deleteJob(jobIndex)" class="btn btn-danger">X</button> 
             <div class="form-group mt-2">
               <label for="">Enter Your Full Name</label>
-              <input type="text" class="form-control" id="yourFullName" name="yourFullName" placeholder="Your Full name" formControlName="yourFullName" >
-              <!-- <span *ngIf="yourFullName && yourFullName.invalid && yourFullName.touched" >Enter your Name</span> -->
-            </div>
-  
+              <input type="text" class="form-control" id="yourFullName" name="yourFullName" placeholder="Your Full name" formControlName="yourFullName" required>
+              <span *ngIf=" yourFullName && yourFullName.invalid && yourFullName.touched" >Enter your Name</span>
+              
+            </div>  
+              <div class="form-group mt-2">
+                <label for="">Enter Address</label>
+                <input type="text" class="form-control" id="Address" name="Address" placeholder="Your address" formControlName="Address" required>
+                <!-- <span *ngIf=" Address && Address.invalid && Address.touched" >Enter your address</span> -->
+                
+              </div>
             <div class="form-group mt-2">
               <label for="">Enter Your Age</label>
-              <input type="number" class="form-control" formControlName="Age"> 
+              <input type="number" class="form-control" placeholder="Your age" formControlName="Age"> 
+              <span *ngIf="Age && Age.invalid && Age.touched" >Enter your Age</span>
             </div>
-  
+            
+            
+            <div class="form-group mt-2">
+              <label for="">About me</label>
+              <textarea class="form-control" name="textarea" id="textarea" cols="10" rows="10" placeholder="Your Education" formControlName="AboutMe"></textarea>
+              <!-- <input type="text" class="form-control" placeholder="Your Education" formControlName="Education">  -->
+              <!-- <span *ngIf="Education && Education.invalid && Education.touched" >Enter your Education</span> -->
+            </div>
+
+
             <div class="form-group mt-2">
               <label for="">Image url</label>
-              <input type="text" class="form-control" formControlName="Url">
+              <input type="text" class="form-control" formControlName="Url" placeholder="Image url">
             </div>
 
             <div class="form-group mt-2">
               <label for="">Enter Your PhoneNumber</label>
-              <input type="number" class="form-control" formControlName="phoneNumber">
+              <input type="number" class="form-control" formControlName="phoneNumber" placeholder="Your phone number">
             </div>
   
             <div class="form-group mt-2">
               <label for="">Enter Your Email</label>
-              <input type="email" class="form-control" formControlName="email">
+              <input type="email" class="form-control" placeholder="Your email" formControlName="email">
             </div>
   
             <div class="form-group mt-2">
               <label for="">Enter Company Name</label>
-              <input type="text" class="form-control" formControlName="companyName">
+              <input type="text" class="form-control" formControlName="companyName" placeholder="Company name">
             </div>
   
             <div class="form-group mt-2">
               <label for="">Enter Company Work Descritpion</label>
-              <input type="text" class="form-control" formControlName="companyWorkDescription">
+              <input type="text" class="form-control" formControlName="companyWorkDescription" placeholder="Work descritpion">
             </div>
             <button type="button" (click)="addNewWorkExp(jobIndex)" class="btn btn-primary">Add Experience</button>
             <div formArrayName="workExps">
@@ -52,17 +68,17 @@
                   <button type="button" (click)="deleteJobExp(jobIndex,expIndex)" class="btn btn-danger">Delete Experience</button>
                   <div class="form-group mt-2">
                     <label for="">Position</label>
-                    <input type="text" class="form-control" formControlName="position">
+                    <input type="text" class="form-control" formControlName="position" placeholder="Postion">
                   </div>
   
                   <div class="form-group mt-2">
                     <label for="">Start Date</label>
-                    <input type="Date" class="form-control" formControlName="startAt">
+                    <input type="Date" class="form-control" formControlName="startAt" placeholder="Start date">
                   </div>
   
                   <div class="form-group mt-2">
                     <label for="">End Date</label>
-                    <input type="Date" class="form-control" formControlName="endAt">
+                    <input type="Date" class="form-control" formControlName="endAt" placeholder="End date">
                   </div> 
                 </div>
               </div>
@@ -73,11 +89,10 @@
       <button
       *ngIf="show"
       type="submit" class="btn btn-primary col-md-6 d-block m-auto mt-3 mb-4"  
-      [disabled]="jobForm.invalid"
+    
       ><a 
 
        >  Save </a> </button>
         
     </form>
   </section> 
-  

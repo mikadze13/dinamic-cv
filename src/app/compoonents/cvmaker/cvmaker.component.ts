@@ -12,7 +12,8 @@ export class CvmakerComponent {
   
   jobForm!: FormGroup;
   show:boolean=false;
-  selectedFile!:File;
+  selectedFile!:File; 
+ 
   @Output() isLogout = new EventEmitter<void>()
   @Output()  SendInfo:EventEmitter<any> = new EventEmitter()
   // Form initialization
@@ -31,25 +32,30 @@ export class CvmakerComponent {
   // newJob() function returns new template that allows to add a new job
   newJob(): FormGroup {
     return this.fBuilder.group({ 
-      yourFullName:new FormControl('',[Validators.required]),
+      yourFullName:new FormControl('',Validators.required),
       Age:new FormControl('',[Validators.required]),
+      AboutMe:new FormControl('', [Validators.required]),
       Url:new FormControl('',[Validators.required]),
+      Address:new FormControl('',[Validators.required]),
       phoneNumber:new FormControl('',[Validators.required]),
       email:new FormControl('',[Validators.email]),
       companyName: new FormControl('',[Validators.required]),
       companyWorkDescription: new FormControl('',[Validators.required]),
       workExps: this.fBuilder.array([])
     })
+    
   }
+  
   // required input
-  // get yourFullName(){
-  //   // return this.jobForm.value.jobs[0].get('yourFullName')
-  //   return this.jobForm.value.get('yourFullName')
-  // }
-  // get Age(){
-  //   // return this.jobForm.value.jobs[0].get('yourFullName')
-  //   return this.jobForm.value.get('Age')
-  // }
+  get yourFullName(){ 
+    // return this.jobForm.value.jobs[0].get('yourFullName')
+    // return this.jobForm.value.get('yourFullName')
+    return this.jobForm.get('yourFullName')  
+  }
+  get Age(){
+    // return this.jobForm.value.jobs[0].get('yourFullName')
+    return this.jobForm.get('Age') 
+  }
 
   // getWorkExps()function returns already added job index 
   getWorkExps(jobIndex: number): FormArray {
@@ -99,6 +105,8 @@ export class CvmakerComponent {
     this.router.navigate(['/cvprofile'],{queryParams:{
       name:this.jobForm.value.jobs[0].yourFullName,
       age:this.jobForm.value.jobs[0].Age,
+      address:this.jobForm.value.jobs[0].Address,
+      aboutme:this.jobForm.value.jobs[0].AboutMe,
       PhotoUrl:this.jobForm.value.jobs[0].Url,
       phoneNumber:this.jobForm.value.jobs[0].phoneNumber,
       email:this.jobForm.value.jobs[0].email,

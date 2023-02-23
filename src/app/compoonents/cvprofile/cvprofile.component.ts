@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { from, Observable } from 'rxjs';
+import { FirebaseService } from 'src/app/service/firebase.service';
 @Component({
   selector: 'app-cvprofile',
   templateUrl: './cvprofile.component.html',
@@ -8,6 +9,7 @@ import { from, Observable } from 'rxjs';
 })
 export class CvprofileComponent implements OnInit {
   array:any=[]
+  @Output() isLogout = new EventEmitter<void>()
   constructor(private route:ActivatedRoute){}
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
@@ -25,5 +27,6 @@ export class CvprofileComponent implements OnInit {
     })
      
   } 
+ 
 
 }

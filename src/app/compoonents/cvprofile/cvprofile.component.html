@@ -1,10 +1,44 @@
-<button [routerLink]="[ '/auth' ]">back</button>
+<div class="background"> 
+<button [routerLink]="[ '/auth' ]">back</button> 
 <div class="main"   *ngFor="let i of array">
-    <p>{{i.name}}</p>
-    <p>{{i.age}}</p>
-    <img [src]="i.PhotoUrl" alt="not found">
-    <p>{{i.phoneNumber}}</p>
-    <p>{{i.email}}</p>
-    <p>{{i.companyName}}</p>
-    <p>{{i.companyWorkDescription}}</p>
+    
+    <div class="contact">
+        <div class="contact-inner">
+            <img [src]="i.PhotoUrl" alt="not found">
+            <h2>Contact</h2>
+            <div class="line"></div>
+        <div class="information"> 
+            <h5>Phone</h5>
+            <p>{{i.phoneNumber}}</p>
+        </div>
+        <div class="line"></div>
+        <div class="information"> 
+            <h5>Email</h5>
+            <p>{{i.email}}</p>
+        </div>
+        <div class="line"></div>
+        <div class="information"> 
+            <h5>Address</h5>
+            <p>{{i.address}}</p>
+        </div>
+        <div class="line"></div>
+        <div class="information"> 
+            <h5>Phone</h5>
+            <p>{{i.phoneNumber}}</p>
+        </div>
+        <div class="line"></div>
+        </div>
+    </div>
+   <div class="about-person">
+    <div class="template">
+        <h1>{{i.name}}</h1>
+        <p class="workdesc">{{i.companyWorkDescription}}</p>
+        <p>{{i.aboutme}}</p>
+    </div>
+   </div>
+   
+    <!--  
+    <p>{{i.age}}</p>    
+    --> 
+</div>
 </div>
