@@ -1,6 +1,21 @@
-<div class="background"> 
-<button [routerLink]="[ '/auth' ]">back</button> 
-<div class="main"   *ngFor="let i of array">
+<div class="background" > 
+<button [routerLink]="[ '/auth' ]" class="router-back">back</button> 
+<button (click)="changeStyle()" class="change-styles">Change Styles</button>
+<div class="styles-main" > 
+ 
+<div class="style-container" *ngIf="show">
+    <label for="red">Red</label>
+    <input type="range" name="red" id="red" class="red" min="0" max="255" value="0" (input)="red()">
+    <span id="rangeValue1" class="rangeValue1" [(ngModel)]="range1">0</span> 
+    <label for="green">Green</label>
+    <input type="range" name="green" id="green" class="green" min="0" max="255" value="0" (input)="green()">
+    <span id="rangeValue2" class="rangeValue2" [(ngModel)]="range2">0</span>
+    <label for="blue">Blue</label>
+    <input type="range" name="blue" id="blue" class="blue" min="0" max="255" value="0" (input)="blue()">
+    <span id="rangeValue3" class="rangeValue3" [(ngModel)]="range3">0</span>
+</div>
+</div>
+<div class="main" *ngFor="let i of array">
     
     <div class="contact">
         <div class="contact-inner">

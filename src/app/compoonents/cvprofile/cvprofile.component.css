@@ -3,7 +3,7 @@
     height: 100% !important;
     background-color: #0e0e0e;
 }
-button{
+.router-back{
     position: absolute;
 }
 .main{
@@ -23,7 +23,6 @@ h2,h5{
     margin: 0;
     color: white;
 }
-
 h1{
     color: #221f1f;
     text-transform: uppercase;
@@ -62,5 +61,22 @@ h1{
     font-size: 27px;
     font-weight: 600;
     letter-spacing: 0.5rem;
-    color: #52595D	;
+    color: #52595D;
+}
+.styles-main{
+    position: absolute;
+    right: 0;
+}
+.change-styles{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    z-index: 20;
+}
+.style-container{ 
+    margin-top: 40px;
+    margin-right: 20px;
+    width: 300px;
+    height: 100px;
+    background-color: red;
 }

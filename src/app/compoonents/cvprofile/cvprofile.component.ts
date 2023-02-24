@@ -9,6 +9,11 @@ import { FirebaseService } from 'src/app/service/firebase.service';
 })
 export class CvprofileComponent implements OnInit {
   array:any=[]
+  show:boolean=false;
+  count:number = 0  
+  range1:any
+  range2:any
+  range3:any
   @Output() isLogout = new EventEmitter<void>()
   constructor(private route:ActivatedRoute){}
   ngOnInit(): void {
@@ -27,6 +32,24 @@ export class CvprofileComponent implements OnInit {
     })
      
   } 
- 
 
+  changeStyle(){
+    this.count++
+    if(this.count%2!=0){
+      this.show=true 
+    }else{
+      this.show=false
+    }
+  }
+  red(){
+    const inp1 = document.querySelector('.red')  as HTMLInputElement
+    this.range1 = inp1.valueAsNumber
+    console.log(this.range1)
+  }
+ green(){
+
+ }
+ blue(){
+
+ }
 }
