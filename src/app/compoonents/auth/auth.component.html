@@ -14,7 +14,7 @@
       <img src="../../../assets/images/curriculum.png" alt="logo" class="log-form-gif">
       <h2 class="form-h2">Create your account</h2>
       <p class="form-p">Star your best casino journey with</p>
-      <label for="email" class="email-label" >
+      <!-- <label for="email" class="email-label" >
           <span style="transition-delay: 0ms;">E</span>
           <span style="transition-delay: 50ms;">m</span>
           <span style="transition-delay: 100ms;">a</span>
@@ -22,10 +22,21 @@
           <span style="transition-delay: 200ms;">l</span>
 
       </label>
-      <input type="email" name="email" id="email" class="email"  #emailSignup/>
-       
-      <label for="password" class="password-label">Password</label>
-      <input type="password" name="password" id="password" class="password" #passwordSignup/> 
+      <input type="email" name="email" id="email" class="email"  #emailSignup/> -->
+      <div class="group">
+        <input required="" type="text" class="input"  #emailSignup/>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name</label>
+      </div>
+      <div class="group">
+        <input required="" type="text" class="input"  #passwordSignup/>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+      <!-- <label for="password" class="password-label">Password</label>
+      <input type="password" name="password" id="password" class="password" #passwordSignup/>  -->
       <a (click)="signInForm()" class="SignIn">SignIn</a>
       <button class="submit" (click)="onSignup(emailSignup.value,passwordSignup.value)">
         Join Now
