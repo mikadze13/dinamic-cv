@@ -28,9 +28,7 @@
 }
 .close {
   cursor: pointer;
-}
-.form-main-container1 {
-}
+} 
 
 .group {
   position: relative;
@@ -43,7 +41,7 @@
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #515151;
+  border-bottom: 1px solid #5264ae;
   background: transparent;
 }
 
@@ -52,7 +50,7 @@
 }
 
 label {
-  color: #999;
+  color: #5c7381;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -159,25 +157,37 @@ label {
   font-weight: 500;
   color: #7b8390;
   float: left;
-}
-.log-in-form .log-form-gif {
-}
-
-.submit {
-  background: #37ae65;
-  border-radius: 8px;
-  width: 100%;
-  height: 44px;
-
-  border: none;
-  outline: none;
-  color: #fff;
-  margin-top: 16px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  text-align: center;
-  cursor: pointer;
-}
+}  
+button {
+    --bg: #5264ae;
+    --text-color: #fff; 
+    display: block;
+    
+    width:100%;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 0.5em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #566ecc 0px 7px 2px, #000 0px 8px 5px;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  button:active {
+    top: 4px;
+    box-shadow: #566ecc 0px 3px 2px,#000 0px 3px 5px;
+  }
 
 .form-h2 {
   font-style: normal;
@@ -227,173 +237,4 @@ label {
   margin: 0;
   color: white;
   margin-left: 5px !important;
-}
-/* 
-#email {
-  border: none;
-  border-radius: 6px;
-  border: 1px solid #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-}
-#name {
-  border: none;
-  border-radius: 6px;
-  border-radius: 1px solid #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: whitesmoke;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-}
-#username {
-  border: none;
-  border-radius: 6px;
-  border-radius: 1px solid #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: whitesmoke;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-}
-
-.currency-country-main {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-#Country {
-  border: none;
-  border-radius: 6px;
-  background-color: #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: whitesmoke;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-}
-.currency-country-child {
-  width: 180px;
-}
-.currency-country-child2 {
-  width: 180px;
-}
-#Currency {
-  border: none;
-  border-radius: 6px;
-  background-color: #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: whitesmoke;
-  margin-bottom: 15px;
-  transition: all 0.2s ease-in-out;
-  margin: 0 0 16px 0;
-}
-
-#password {
-  border-radius: 6px;
-  border: none;
-  border: 1px solid #252e36;
-  outline: none;
-  width: 100%;
-  height: 46px;
-  padding: 0 15px;
-  color: black;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
-  margin: 0 0 16px 0;
-}
-.name-label {
-  width: 100%;
-  float: left;
-  padding: 0;
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  letter-spacing: -0.2px;
-  font-weight: 600;
-
-  position: relative;
-  margin: 0 0 8px 0;
-  font-weight: bold !important;
-}
-.password-label {
-  width: 100%;
-  float: left;
-  padding: 0;
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  letter-spacing: -0.2px;
-  font-weight: 600;
-
-  position: relative;
-  margin: 0 0 8px 0;
-  font-weight: bold !important;
-}
-.username-label {
-  width: 100%;
-  float: left;
-  padding: 0;
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  letter-spacing: -0.2px;
-  font-weight: 600;
-
-  position: relative;
-  margin: 0 0 8px 0;
-  font-weight: bold !important;
-}
-.email-label {
-  width: 100%;
-  float: left;
-  padding: 0;
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  letter-spacing: -0.2px;
-  font-weight: 600;
-
-  position: relative;
-  margin: 0 0 8px 0;
-  font-weight: bold !important;
-}
-.phone-number-child .country-code-label {
-  width: 100%;
-  float: left;
-  padding: 0;
-  margin: 0 0 6px 0;
-  font-size: 13px;
-  letter-spacing: -0.2px;
-  font-weight: 600;
-
-  position: relative;
-  margin: 0 0 8px 0;
-} */
-
-/* remove arrow from input */
-
-/* Chrome, Safari, Edge, Opera */
-#Phone-number::-webkit-outer-spin-button,
-#Phone-number::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-#Phone-number[type="number"] {
-  -moz-appearance: textfield;
-}
-/* remove arrow from input end */
-/* form styles end */
+} 
