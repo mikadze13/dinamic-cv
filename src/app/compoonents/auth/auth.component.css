@@ -3,6 +3,7 @@
   height: 100%;
   background-color: #b8b8b8;
 }
+
 .form-main-container {
   width: 100%;
   margin: auto;
@@ -14,6 +15,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .form-main-container1 {
   width: 100%;
   height: 100%;
@@ -24,11 +26,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000a3;
+  background-color: rgb(7 5 5 / 84%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
+
 .close {
   cursor: pointer;
-} 
+}
 
 .group {
   position: relative;
@@ -62,8 +67,8 @@ label {
   -webkit-transition: 0.2s ease all;
 }
 
-.input:focus ~ label,
-.input:valid ~ label {
+.input:focus~label,
+.input:valid~label {
   top: -20px;
   font-size: 14px;
   color: #5264ae;
@@ -96,8 +101,12 @@ label {
   right: 50%;
 }
 
-.input:focus ~ .bar:before,
-.input:focus ~ .bar:after {
+.SignIn1 {
+  cursor: pointer;
+}
+
+.input:focus~.bar:before,
+.input:focus~.bar:after {
   width: 50%;
 }
 
@@ -111,7 +120,7 @@ label {
   opacity: 0.5;
 }
 
-.input:focus ~ .highlight {
+.input:focus~.highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
@@ -140,6 +149,37 @@ label {
   box-shadow: 20px -20px 60px #9c9c9c, -20px 20px 60px #adabab;
 }
 
+.log-in-form1 {
+  width: 460px;
+  height: auto;
+  background: black;
+  border-radius: 13px;
+  padding: 30px 40px 40px 40px;
+  border-radius: 30px;
+  background: #b8b8b8;
+}
+
+.card {
+  background-color: transparent;
+}
+
+.card-body {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.google-icon{
+  margin-right: 23px;
+   
+}
+.log-in-form1 > .group{
+  margin-top: 20px;
+}
+.signInWithGoogle-main{
+  margin-top: 28px;
+}
 @-webkit-keyframes cssAnimation {
   from {
     -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(0px);
@@ -149,6 +189,7 @@ label {
     -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
   }
 }
+
 .form-signup-description {
   text-align: center;
   font-size: 11px;
@@ -157,37 +198,38 @@ label {
   font-weight: 500;
   color: #7b8390;
   float: left;
-}  
+}
+
 button {
-    --bg: #5264ae;
-    --text-color: #fff; 
-    display: block;
-    
-    width:100%;
-    border: none;
-    background: var(--bg);
-    color: var(--text-color);
-    padding: 0.5em;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: 0.2s;
-    border-radius: 5px;
-    outline: none;
-    opacity: 0.8;
-    letter-spacing: 1px;
-    box-shadow: #566ecc 0px 7px 2px, #000 0px 8px 5px;
-  }
-  
-  button:hover {
-    opacity: 1;
-  }
-  
-  button:active {
-    top: 4px;
-    box-shadow: #566ecc 0px 3px 2px,#000 0px 3px 5px;
-  }
+  --bg: #5264ae;
+  --text-color: #fff;
+  display: block;
+
+  width: 100%;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+  padding: 0.5em;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  box-shadow: #566ecc 0px 7px 2px, #000 0px 8px 5px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+button:active {
+  top: 4px;
+  box-shadow: #566ecc 0px 3px 2px, #000 0px 3px 5px;
+}
 
 .form-h2 {
   font-style: normal;
@@ -237,4 +279,4 @@ button {
   margin: 0;
   color: white;
   margin-left: 5px !important;
-} 
+}

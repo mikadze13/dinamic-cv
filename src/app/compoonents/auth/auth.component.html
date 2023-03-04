@@ -1,55 +1,66 @@
-  <main class="background" *ngIf="!isSignedIn"> 
-  <div class="form-main-container back SignIn" id="form-main-container"  *ngIf="!isSignedIn"> 
-    <form action="" class="log-in-form" id="form"  >
+<main class="background" *ngIf="!isSignedIn">
+  <div class="form-main-container back SignIn" id="form-main-container" *ngIf="!isSignedIn">
+    <form action="" class="log-in-form" id="form">
       <img src="../../../assets/images/curriculum.png" alt="logo" class="log-form-gif">
       <h2 class="form-h2">Create your account</h2>
-      <p class="form-p">Star your best casino journey with</p> 
+      <p class="form-p">Star your best cv journey with</p>
       <div class="group">
-        <input required="" type="text" class="input"  #emailSignup/>
+        <input required="" type="text" class="input" #emailSignup />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Name</label>
       </div>
       <div class="group">
-        <input required="" type="text" class="input"  #passwordSignup/>
+        <input required="" type="text" class="input" #passwordSignup />
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Password</label>
-      </div> 
-      <a (click)="signInForm()" class="SignIn">SignIn</a>
+      </div>
+      <a (click)="signInForm()" class="SignIn1">SignIn</a>
       <button class="submit" (click)="onSignup(emailSignup.value,passwordSignup.value)">
         Join Now
       </button>
       <p class="form-signup-description">By clicking Create Account, you are indicating that you have read
         and acknowledge the Terms and Conditions</p>
     </form>
-  </div>  
-<ng-container *ngIf="!isSignedIn"> 
-  <div class="form-main-container1 back1" id="form-main-container1" *ngIf="show"  >
-    <form action="" class="log-in-form log-in-form1" id="form"  >
-      <img src="../../../assets/images/close.png" alt="" (click)="hide()" class="close">
-      <img src="../../../assets/images/curriculum.png" alt="logo" class="log-form-gif"> 
-      <label for="email" class="email-label" >email</label>
-      <input type="email" name="email" id="email" class="email"  #email/>
-       
-      <label for="password" class="password-label">Password</label>
-      <input type="password" name="password" id="password" class="password" #password/> 
-      
-      <button class="submit" (click)="onSignin(email.value,password.value)">
-        Join Now
-      </button>
-      <div *ngIf="!isSignedIn">
-        <a  (click)="signInWithGoogle()">
-          <div class="card">
-            <div class="card-body">
-              <img src="../assets/images/google.png" alt="">
-              sign in with google
+  </div>
+  <ng-container *ngIf="!isSignedIn">
+    <div class="form-main-container1 back1" id="form-main-container1" *ngIf="show">
+      <form action="" class=" log-in-form1" id="form">
+        <img src="../../../assets/images/close.png" alt="" (click)="hide()" class="close">
+        <img src="../../../assets/images/curriculum.png" alt="logo" class="log-form-gif">
+        <!-- <label for="email" class="email-label">email</label>
+        <input type="email" name="email" id="email" class="email" #email /> -->
+        <div class="group">
+          <input required="" type="text" class="input" #email />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <input required="" type="text" class="input" #password />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+        <!-- <label for="password" class="password-label">Password</label>
+        <input type="password" name="password" id="password" class="password" #password /> -->
+
+        <button class="submit" (click)="onSignin(email.value,password.value)">
+          Join Now
+        </button>
+        <div *ngIf="!isSignedIn" class="signInWithGoogle-main">
+          <a (click)="signInWithGoogle()">
+            <div class="card">
+              <div class="card-body">
+                <img src="../../../assets/images/google.png" alt="google" class="google-icon">
+                sign in with google
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    </form>
-  </div> 
-</ng-container>
+          </a>
+        </div>
+      </form>
+    </div>
+  </ng-container>
 </main>
-<app-cvmaker *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-cvmaker> 
+<app-cvmaker *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-cvmaker>
