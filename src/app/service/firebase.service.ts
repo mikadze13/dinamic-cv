@@ -17,7 +17,23 @@ export class FirebaseService {
       this.isLoggedIn=true;
       console.log(res)
       localStorage.setItem('user',JSON.stringify(res.user))
-    })
+    }).catch((error) => {
+      // Handle errors here
+      const errorCode = error.code;
+      const errorMessage = error.message;
+  
+      // Display an error message to the user
+      if (errorCode === 'auth/wrong-password') {
+        // Display a message for wrong password error
+        alert('The password you entered is incorrect.');
+      } else if (errorCode === 'auth/user-not-found') {
+        // Display a message for user not found error
+        alert('There is no user record corresponding to this email.');
+      } else {
+        // Display a generic error message for other errors
+        alert(errorMessage);
+      }
+    });
   }
 
   // signup
@@ -26,7 +42,24 @@ export class FirebaseService {
     .then(res=>{
       this.isLoggedIn=true;
       localStorage.setItem('user',JSON.stringify(res.user))
-    })
+       
+    }).catch((error) => {
+      // Handle errors here
+      const errorCode = error.code;
+      const errorMessage = error.message;
+  
+      // Display an error message to the user
+      if (errorCode === 'auth/wrong-password') {
+        // Display a message for wrong password error
+        alert('The password you entered is incorrect.');
+      } else if (errorCode === 'auth/user-not-found') {
+        // Display a message for user not found error
+        alert('There is no user record corresponding to this email.');
+      } else {
+        // Display a generic error message for other errors
+        alert(errorMessage);
+      }
+    });
   }
   // logout
   logout(){

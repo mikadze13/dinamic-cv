@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/service/firebase.service';
 
 @Component({
@@ -19,12 +20,36 @@ export class AuthComponent implements OnInit{
     }
   }
   
+
+  UserInfo = new FormGroup({
+    gmail:new FormControl('',[Validators.email]),
+    password:new FormControl('',[Validators.required])
+  }) 
+  get gmail(){
+    return this.UserInfo.get('gmail')
+  }
+  get password(){
+    return this.UserInfo.get('password')
+  }
+
+  signIn = new FormGroup({
+    Gmail:new FormControl('',[Validators.email]),
+    Password:new FormControl('',[Validators.required])
+  })
+  get Gmail(){
+    return this.signIn.get('Gmail')
+  }
+  get Password(){
+    return this.signIn.get('Password')
+  }
+
   // sign up
   async onSignup(email: string, password: string) {
+    this.UserInfo.reset()
     await this.firebaseService.signup(email, password)
     if (this.firebaseService.isLoggedIn) {
       this.isSignedIn = true
-    } 
+    }
 
   }
   // sign in
