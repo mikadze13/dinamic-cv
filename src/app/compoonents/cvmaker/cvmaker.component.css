@@ -4,3 +4,21 @@ section{
     height: 100%;
     background-color: white;
 }
+.logoutbutton{
+    position: absolute;
+    right: 0;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ee6a68;
+    border: none;
+    color: white;
+    margin:5px 5px 0px 0px;
+    transition: all .2s ease-in-out;
+}
+.logoutbutton:hover{
+    background-color: #e63c39;
+}
+form{
+    width: clamp(250px, 100%, 100%);
+}
