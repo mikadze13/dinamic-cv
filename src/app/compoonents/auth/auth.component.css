@@ -135,6 +135,11 @@ label {
   }
 }
 
+.errorMess{
+  color: red;
+  font-size: 12px;
+  transition: all .2s ease-in-out;
+}
 /* scrollbar styles end */
 .log-in-form {
   width: 460px;

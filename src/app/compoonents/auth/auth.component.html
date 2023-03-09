@@ -9,14 +9,14 @@
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Gmail</label>
-        <span *ngIf="gmail && gmail.invalid && gmail.touched">enter your Gmail</span>
+        <span *ngIf="gmail && gmail.invalid && gmail.touched" class="errorMess">enter your Gmail</span>
       </div>
       <div class="group">
         <input required="" type="password" class="input" #passwordSignup formControlName="password"/>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Password</label>
-        <span *ngIf="password && password.invalid && password.touched">enter your password</span>
+        <span *ngIf="password && password.invalid && password.touched" class="errorMess">enter your password</span>
       </div>
       <a (click)="signInForm()" class="SignIn1">SignIn</a>
       <button class="submit"
@@ -38,14 +38,14 @@
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Email</label>
-          <span *ngIf="Gmail && Gmail.invalid && Gmail.touched">enter your Gmail</span>
+          <span *ngIf="Gmail && Gmail.invalid && Gmail.touched" class="errorMess">enter your Gmail</span>
         </div>
         <div class="group">
           <input required="" type="password" class="input" #password formControlName="Password"/>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Password</label>
-          <span *ngIf="Password && Password.invalid && Password.touched">enter your password</span>
+          <span *ngIf="Password && Password.invalid && Password.touched" class="errorMess">enter your password</span>
         </div> 
 
         <button class="submit" 

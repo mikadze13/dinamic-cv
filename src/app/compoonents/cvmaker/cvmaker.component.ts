@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 import { Router , ParamMap, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { asapScheduler } from 'rxjs';
 import { FirebaseService } from 'src/app/service/firebase.service';
 
 @Component({
@@ -42,8 +43,7 @@ export class CvmakerComponent {
       companyName: new FormControl('',[Validators.required]),
       companyWorkDescription: new FormControl('',[Validators.required]),
       workExps: this.fBuilder.array([])
-    })
-    
+    }) 
   }
   
   // required input
