@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import {   HttpClientModule } from "@angular/common/http";
 import { CvprofileComponent } from './compoonents/cvprofile/cvprofile.component';
 import { CvmakerComponent } from './compoonents/cvmaker/cvmaker.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './compoonents/auth/auth.component';
 import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.component';  
 import { CommonModule } from '@angular/common';
+import { AuthGuard } from './authguard/auth.guard';
+
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +37,9 @@ import { CommonModule } from '@angular/common';
       storageBucket: 'auth-f03c9.appspot.com',
       messagingSenderId: '447021386139',
       appId: '1:447021386139:web:2e27c0934ab4cf8cfb793e',
-    }),
+    }) 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

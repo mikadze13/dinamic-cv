@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/service/firebase.service';
-
+export class User {
+  username!: string;
+  password!: string;
+}
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
+ 
 export class AuthComponent implements OnInit{
   constructor(public firebaseService: FirebaseService){}
   isSignedIn = false;
   show:boolean = false;
   hideform:boolean = false;
+  user = new User();
   ngOnInit(): void {
     if (localStorage.getItem('user') !== null) {
       this.isSignedIn = true
