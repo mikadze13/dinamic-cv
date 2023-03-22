@@ -11,7 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './compoonents/auth/auth.component';
 import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.component';  
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from './authguard/auth.guard';
+import { AuthGuard } from './core/authguard/auth.guard';
+import { FirebaseService } from './service/firebase.service';
 
  
 @NgModule({
@@ -39,7 +40,7 @@ import { AuthGuard } from './authguard/auth.guard';
       appId: '1:447021386139:web:2e27c0934ab4cf8cfb793e',
     }) 
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

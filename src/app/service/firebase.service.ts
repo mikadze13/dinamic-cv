@@ -70,10 +70,19 @@ export class FirebaseService {
   // sign in with google
   GoogleSignIn() {
     return this.firebaseAuth.signInWithPopup(new GoogleAuthProvider()).then(res => {
-      this.isLoggedIn = true;
+      this.isLoggedIn = true; 
       localStorage.setItem('user', JSON.stringify(res.user?.uid))
     }, err => {
       err.error
     })
+  }
+
+
+  isAuthenticated() {
+    if(this.isLoggedIn==true){
+      return true
+    }else{
+      return false
+    }
   }
 }
