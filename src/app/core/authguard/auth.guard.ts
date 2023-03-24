@@ -7,26 +7,20 @@ import { FirebaseService } from '../../service/firebase.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private firebase:FirebaseService) {}
+  constructor(private router: Router, private firebase: FirebaseService) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-    const onSignIn = false; 
 
-    if (this.firebase.isAuthenticated())  {
-       
-      console.log("trueeee")
-       return true
-    }else {
-      // Redirect the user to the login page
+    if (this.firebase.isAuthenticated()) {
+      return true
+    } else {
       this.router.navigate(['/auth']);
-      console.log("falseeeeeeeee")
       return false;
-    }  
-  
-     
+    }
+
+
   }
-  
+
 }

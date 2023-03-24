@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/service/firebase.service';
 export class User {
   username!: string;
@@ -12,7 +13,7 @@ export class User {
 })
  
 export class AuthComponent implements OnInit{
-  constructor(public firebaseService: FirebaseService){}
+  constructor(public firebaseService: FirebaseService, private router: Router){}
   isSignedIn = false;
   show:boolean = false;
   hideform:boolean = false;
@@ -53,7 +54,9 @@ export class AuthComponent implements OnInit{
     this.UserInfo.reset()
     await this.firebaseService.signup(email, password)
     if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true
+      this.isSignedIn = true;
+      this.router.navigate(['/cvmaker']);
+
     }
 
   }
@@ -61,7 +64,8 @@ export class AuthComponent implements OnInit{
   async onSignin(email: string, password: string) {
     await this.firebaseService.signin(email, password)
     if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true
+      this.isSignedIn = true;
+      this.router.navigate(['/cvmaker']);
     } 
   }
   // sign in with google
@@ -69,7 +73,8 @@ export class AuthComponent implements OnInit{
 
     await this.firebaseService.GoogleSignIn()
     if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true
+      this.isSignedIn = true;
+      this.router.navigate(['/cvmaker']);
     } 
 
   } 

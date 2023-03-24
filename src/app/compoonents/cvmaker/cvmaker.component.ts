@@ -138,6 +138,7 @@ export class CvmakerComponent {
   logout(){
     this.firebaseService.logout()
     this.isLogout.emit()
+    this.router.navigate(['/auth'])
   }
 
 
