@@ -50,7 +50,7 @@ export class CvprofileComponent implements OnInit {
     return this.range3
   }
   backgroundColorRange() {
-    this.backgroundColor = `rgb(${this.red()}, ${this.blue()}, ${this.green()})`
+    this.backgroundColor = `rgb(${this.red()}, ${this.blue()}, ${this.green()})` 
     const el = this.el.nativeElement.querySelector('.main');
     this.renderer.setStyle(el, 'background-color', this.backgroundColor); 
   }

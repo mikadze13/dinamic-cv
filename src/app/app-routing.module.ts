@@ -9,22 +9,22 @@ import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.c
 import { NotCompleteGuard } from './core/not-complete.guard';
 
 const routes: Routes = [
-   
-  { path: '', redirectTo:'auth', pathMatch:'full'},
-  {path:'auth',component:AuthComponent},
-  {path:'cvmaker',component:CvmakerComponent, canActivate:[AuthGuard]},
-  { path:'cvprofile' , component:CvprofileComponent,canActivate:[AuthGuard]},
+
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
+  { path: 'cvmaker', component: CvmakerComponent, canActivate: [AuthGuard] },
+  { path: 'cvprofile', component: CvprofileComponent, canActivate: [AuthGuard] },
   {
-    path:'**',
-    component:PagenotfoundComponent
-  } 
+    path: '**',
+    component: PagenotfoundComponent
+  }
 
 ];
 
 @NgModule({
-  imports: [ 
-    RouterModule.forRoot(routes) 
-  
+  imports: [
+    RouterModule.forRoot(routes)
+
   ],
   exports: [RouterModule]
 })
