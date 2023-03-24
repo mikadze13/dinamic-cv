@@ -13,9 +13,10 @@
     <label for="blue">Blue</label>
     <input type="range" name="blue" id="blue" class="blue" min="0" max="255" value="0" (input)="blue()" [(ngModel)]="range3">
     <span id="rangeValue3" class="rangeValue3"  >{{range3}}</span>
+    <button (click)="backgroundColorRange()">save</button>
 </div>
 </div>
-<div class="main" *ngFor="let i of array">
+<div class="main " *ngFor="let i of array" >
     
     <div class="contact">
         <div class="contact-inner">

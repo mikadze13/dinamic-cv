@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { from, Observable } from 'rxjs';
 import { FirebaseService } from 'src/app/service/firebase.service';
@@ -8,48 +8,50 @@ import { FirebaseService } from 'src/app/service/firebase.service';
   styleUrls: ['./cvprofile.component.css']
 })
 export class CvprofileComponent implements OnInit {
-  array:any=[]
-  show:boolean=false;
-  count:number = 0  
-  range1:any
-  range2:any
-  range3:any
+  array: any = []
+  show: boolean = false;
+  count: number = 0
+  range1: any
+  range2: any
+  range3: any
+  backgroundColor: any
   @Output() isLogout = new EventEmitter<void>()
-  constructor(private route:ActivatedRoute){}
+  constructor(private route: ActivatedRoute, private el: ElementRef, private renderer: Renderer2) { }
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params =>{
-      // const myArray = this.route.snapshot.queryParamMap.get('myArray');
-    // if (myArray === null) {
-    //   this.arrayOfValues = new Array<string>();
-    //   console.log(this.arrayOfValues)
-    // } else {
-    //   this.arrayOfValues = JSON.parse(myArray);
-    //   console.log(this.arrayOfValues)
-    // } 
-    this.array.push(params)
-    console.log(this.array)
-    
-    })
-     
-  } 
+    this.route.queryParams.subscribe(params => {
+      this.array.push(params)
+      console.log(this.array)
 
-  changeStyle(){
+    })
+
+  }
+
+  changeStyle() {
     this.count++
-    if(this.count%2!=0){
-      this.show=true 
-    }else{
-      this.show=false
+    if (this.count % 2 != 0) {
+      this.show = true
+    } else {
+      this.show = false
     }
   }
-  red(){
-    const inp1 = document.querySelector('.red')  as HTMLInputElement
+  red() {
+    const inp1 = document.querySelector('.red') as HTMLInputElement
     this.range1 = inp1.valueAsNumber
-    console.log(this.range1)
+    return this.range1
   }
- green(){
-
- }
- blue(){
-
- }
+  green() {
+    const inp2 = document.querySelector('.green') as HTMLInputElement
+    this.range2 = inp2.valueAsNumber
+    return this.range2
+  }
+  blue() {
+    const inp3 = document.querySelector('.blue') as HTMLInputElement
+    this.range3 = inp3.valueAsNumber
+    return this.range3
+  }
+  backgroundColorRange() {
+    this.backgroundColor = `rgb(${this.red()}, ${this.blue()}, ${this.green()})`
+    const el = this.el.nativeElement.querySelector('.main');
+    this.renderer.setStyle(el, 'background-color', this.backgroundColor); 
+  }
 }
