@@ -13,6 +13,9 @@ import { PagenotfoundComponent } from './compoonents/pagenotfound/pagenotfound.c
 import { CommonModule } from '@angular/common';
 import { AuthGuard } from './core/authguard/auth.guard';
 import { FirebaseService } from './service/firebase.service';
+// import { ColorPickerModule } from '../../node_modules/ngx-color/github/';
+import { ColorPickerModule } from 'ngx-color-picker';
+ 
 
  
 @NgModule({
@@ -31,6 +34,7 @@ import { FirebaseService } from './service/firebase.service';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    ColorPickerModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyAQdEMAdBBTA0jRJYtaUjmznXLJsAriK6k',
       authDomain: 'auth-f03c9.firebaseapp.com',
@@ -38,7 +42,7 @@ import { FirebaseService } from './service/firebase.service';
       storageBucket: 'auth-f03c9.appspot.com',
       messagingSenderId: '447021386139',
       appId: '1:447021386139:web:2e27c0934ab4cf8cfb793e',
-    }) 
+    }) ,
   ],
   providers: [AuthGuard, FirebaseService],
   bootstrap: [AppComponent]

@@ -11,9 +11,9 @@ export class CvprofileComponent implements OnInit {
   array: any = []
   show: boolean = false;
   count: number = 0
-  range1: any
-  range2: any
-  range3: any
+  range1: any = 130
+  range2: any = 130 
+  range3: any = 130
   backgroundColor: any
   @Output() isLogout = new EventEmitter<void>()
   constructor(private route: ActivatedRoute, private el: ElementRef, private renderer: Renderer2) { }
