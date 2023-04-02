@@ -11,12 +11,12 @@ export class User {
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
- 
-export class AuthComponent implements OnInit{
-  constructor(public firebaseService: FirebaseService, private router: Router){}
+
+export class AuthComponent implements OnInit {
+  constructor(public firebaseService: FirebaseService, private router: Router) { }
   isSignedIn = false;
-  show:boolean = false;
-  hideform:boolean = false;
+  show: boolean = false;
+  hideform: boolean = false;
   user = new User();
   ngOnInit(): void {
     if (localStorage.getItem('user') !== null) {
@@ -25,27 +25,27 @@ export class AuthComponent implements OnInit{
       this.isSignedIn = false
     }
   }
-  
+
 
   UserInfo = new FormGroup({
-    gmail:new FormControl('',[Validators.email]),
-    password:new FormControl('',[Validators.required])
-  }) 
-  get gmail(){
+    gmail: new FormControl('', [Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
+  get gmail() {
     return this.UserInfo.get('gmail')
   }
-  get password(){
+  get password() {
     return this.UserInfo.get('password')
   }
 
   signIn = new FormGroup({
-    Gmail:new FormControl('',[Validators.email]),
-    Password:new FormControl('',[Validators.required])
+    Gmail: new FormControl('', [Validators.email]),
+    Password: new FormControl('', [Validators.required])
   })
-  get Gmail(){
+  get Gmail() {
     return this.signIn.get('Gmail')
   }
-  get Password(){
+  get Password() {
     return this.signIn.get('Password')
   }
 
@@ -56,7 +56,6 @@ export class AuthComponent implements OnInit{
     if (this.firebaseService.isLoggedIn) {
       this.isSignedIn = true;
       this.router.navigate(['/cvmaker']);
-
     }
 
   }
@@ -66,7 +65,7 @@ export class AuthComponent implements OnInit{
     if (this.firebaseService.isLoggedIn) {
       this.isSignedIn = true;
       this.router.navigate(['/cvmaker']);
-    } 
+    }
   }
   // sign in with google
   async signInWithGoogle() {
@@ -75,9 +74,25 @@ export class AuthComponent implements OnInit{
     if (this.firebaseService.isLoggedIn) {
       this.isSignedIn = true;
       this.router.navigate(['/cvmaker']);
-    } 
+    }
 
-  } 
+  }
+  // sign in with facebook
+  async SignInWithFacebook() {
+    await this.firebaseService.FacebookSignIn()
+    if (this.firebaseService.isLoggedIn) {
+      this.isSignedIn = true;
+      this.router.navigate(['/cvmaker'])
+    }
+  }
+// sign in with guthub
+async SignInWithGithub() {
+  await this.firebaseService.GithubSignIn()
+  if (this.firebaseService.isLoggedIn) {
+    this.isSignedIn = true;
+    this.router.navigate(['/cvmaker'])
+  }
+}
   // logout
   handleLogout() {
     this.isSignedIn = false
@@ -85,11 +100,11 @@ export class AuthComponent implements OnInit{
   }
 
 
-  signInForm(){
-    this.show=true
+  signInForm() {
+    this.show = true
 
   }
-  hide(){
-    this.show=false
+  hide() {
+    this.show = false
   }
 }

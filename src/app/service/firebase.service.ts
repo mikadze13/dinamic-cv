@@ -70,18 +70,36 @@ export class FirebaseService {
   // sign in with google
   GoogleSignIn() {
     return this.firebaseAuth.signInWithPopup(new GoogleAuthProvider()).then(res => {
-      this.isLoggedIn = true; 
+      this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user?.uid))
     }, err => {
       err.error
     })
   }
 
+  // sign in with facebook
+  FacebookSignIn() {
+    return this.firebaseAuth.signInWithPopup(new FacebookAuthProvider()).then(res => {
+      this.isLoggedIn = true;
+      localStorage.setItem('user', JSON.stringify(res.user?.uid))
+    }, err => {
+      err.error
+    })
+  }
+  // sign in with github
+  GithubSignIn() {
+    return this.firebaseAuth.signInWithPopup(new GithubAuthProvider()).then(res => {
+      this.isLoggedIn = true;
+      localStorage.setItem('user', JSON.stringify(res.user?.uid))
+    },err=>{
+      err.error
+    })
+  }
 
   isAuthenticated() {
-    if(this.isLoggedIn==true){
+    if (this.isLoggedIn == true) {
       return true
-    }else{
+    } else {
       return false
     }
   }
