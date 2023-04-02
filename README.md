@@ -8,7 +8,7 @@ Here you can build your CV
      
 
 ## Links
-- Live site URL - [Live site](https://dinamic-cv-hxn5-66tfl36ht-mikadze13.vercel.app/)
+- Live site URL - [Live site](https://dinamic-cv-hxn5.vercel.app/)
 - Solution URL - [Solution URL](https://github.com/mikadze13/dinamic-cv)
 
 ## Built with
