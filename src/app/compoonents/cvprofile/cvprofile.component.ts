@@ -11,10 +11,8 @@ export class CvprofileComponent implements OnInit {
   array: any = []
   show: boolean = false;
   count: number = 0
-  range1: any = 130
-  range2: any = 130 
-  range3: any = 130
-  backgroundColor: any
+  selectedColor!: string;
+  selectedColorContact!:string
   @Output() isLogout = new EventEmitter<void>()
   constructor(private route: ActivatedRoute, private el: ElementRef, private renderer: Renderer2) { }
   ngOnInit(): void {
@@ -34,8 +32,11 @@ export class CvprofileComponent implements OnInit {
       this.show = false
     }
   }
-  color(){
-
+  onChangeColor(event:any) {
+    this.selectedColor = event.target.value;
+  }
+  onChangeColorContact(event:any){
+    this.selectedColorContact = event.target.value
   }
   // red() {
   //   const inp1 = document.querySelector('.red') as HTMLInputElement
@@ -52,9 +53,9 @@ export class CvprofileComponent implements OnInit {
   //   this.range3 = inp3.valueAsNumber
   //   return this.range3
   // }
-  backgroundColorRange() {
-    this.backgroundColor = `rgb(${this.color()})` 
-    const el = this.el.nativeElement.querySelector('.main');
-    this.renderer.setStyle(el, 'background-color', this.backgroundColor); 
-  }
+  // backgroundColorRange() {
+  //   this.backgroundColor = `rgb(${this.color()})` 
+  //   const el = this.el.nativeElement.querySelector('.main');
+  //   this.renderer.setStyle(el, 'background-color', this.backgroundColor); 
+  // }
 }

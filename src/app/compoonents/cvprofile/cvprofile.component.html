@@ -4,26 +4,20 @@
     <div class="styles-main">
 
         <div class="style-container" *ngIf="show">
-            <!-- <label for="red">Red</label>
-            <input type="range" name="red" id="red" class="red" min="0" max="255" value="130" (input)="red()"
-                [(ngModel)]="range1">
-            <span id="rangeValue1" class="rangeValue1">{{range1}}</span>
-            <label for="green">Green</label>
-            <input type="range" name="green" id="green" class="green" min="0" max="255" value="130" (input)="green()"
-                [(ngModel)]="range2">
-            <span id="rangeValue2" class="rangeValue2">{{range2}}</span>
-            <label for="blue">Blue</label>
-            <input type="range" name="blue" id="blue" class="blue" min="0" max="255" value="130" (input)="blue()"
-                [(ngModel)]="range3">
-            <span id="rangeValue3" class="rangeValue3">{{range3}}</span> -->
-
-            <input [(colorPicker)]="backgroundColor" [style.background]="backgroundColor" name="color" id="color" class="color" (input)="color()"/>
-            <button (click)="backgroundColorRange()">save</button>
+             
+            <div class="color-main">
+                <p>BG Color</p>
+                <input type="color" (input)="onChangeColor($event)" />
+            </div>
+            <div class="color-main">
+                <p>BG Contact</p>
+                <input type="color" (input)="onChangeColorContact($event)">
+            </div> 
         </div>
     </div>
-    <div class="main " *ngFor="let i of array">
+    <div class="main " *ngFor="let i of array" [style.background-color]="selectedColor">
 
-        <div class="contact">
+        <div class="contact" [style.background-color]="selectedColorContact">
             <div class="contact-inner">
                 <img [src]="i.PhotoUrl" alt="not found">
                 <h2>Contact</h2>
