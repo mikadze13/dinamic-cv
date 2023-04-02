@@ -1,62 +1,65 @@
-<div class="background" > 
-<button [routerLink]="[ '/cvmaker']" class="router-back">back</button> 
-<button (click)="changeStyle()" class="change-styles">Change Styles</button>
-<div class="styles-main" > 
- 
-<div class="style-container" *ngIf="show">
-    <label for="red">Red</label>
-    <input type="range" name="red" id="red" class="red" min="0" max="255" value="130" (input)="red()" [(ngModel)]="range1">
-    <span id="rangeValue1" class="rangeValue1" >{{range1}}</span> 
-    <label for="green">Green</label>
-    <input type="range" name="green" id="green" class="green" min="0" max="255" value="130" (input)="green()" [(ngModel)]="range2">
-    <span id="rangeValue2" class="rangeValue2"  >{{range2}}</span>
-    <label for="blue">Blue</label>
-    <input type="range" name="blue" id="blue" class="blue" min="0" max="255" value="130" (input)="blue()" [(ngModel)]="range3">
-    <span id="rangeValue3" class="rangeValue3"  >{{range3}}</span>
+<div class="background">
+    <button [routerLink]="[ '/cvmaker']" class="router-back">back</button>
+    <button (click)="changeStyle()" class="change-styles">Change Styles</button>
+    <div class="styles-main">
 
-    <input [(colorPicker)]="backgroundColor" [style.background]="backgroundColor" />
-    <button (click)="backgroundColorRange()">save</button>
-</div>
-</div>
-<div class="main " *ngFor="let i of array" >
-     
-    <div class="contact">
-        <div class="contact-inner">
-            <img [src]="i.PhotoUrl" alt="not found">
-            <h2>Contact</h2>
-            <div class="line"></div>
-        <div class="information"> 
-            <h5>Phone</h5>
-            <p>{{i.phoneNumber}}</p>
-        </div>
-        <div class="line"></div>
-        <div class="information"> 
-            <h5>Email</h5>
-            <p>{{i.email}}</p>
-        </div>
-        <div class="line"></div>
-        <div class="information"> 
-            <h5>Address</h5>
-            <p>{{i.address}}</p>
-        </div>
-        <div class="line"></div>
-        <div class="information"> 
-            <h5>Phone</h5>
-            <p>{{i.phoneNumber}}</p>
-        </div>
-        <div class="line"></div>
+        <div class="style-container" *ngIf="show">
+            <!-- <label for="red">Red</label>
+            <input type="range" name="red" id="red" class="red" min="0" max="255" value="130" (input)="red()"
+                [(ngModel)]="range1">
+            <span id="rangeValue1" class="rangeValue1">{{range1}}</span>
+            <label for="green">Green</label>
+            <input type="range" name="green" id="green" class="green" min="0" max="255" value="130" (input)="green()"
+                [(ngModel)]="range2">
+            <span id="rangeValue2" class="rangeValue2">{{range2}}</span>
+            <label for="blue">Blue</label>
+            <input type="range" name="blue" id="blue" class="blue" min="0" max="255" value="130" (input)="blue()"
+                [(ngModel)]="range3">
+            <span id="rangeValue3" class="rangeValue3">{{range3}}</span> -->
+
+            <input [(colorPicker)]="backgroundColor" [style.background]="backgroundColor" name="color" id="color" class="color" (input)="color()"/>
+            <button (click)="backgroundColorRange()">save</button>
         </div>
     </div>
-   <div class="about-person">
-    <div class="template">
-        <h1>{{i.name}}</h1>
-        <p class="workdesc">{{i.companyWorkDescription}}</p>
-        <p>{{i.aboutme}}</p>
-    </div>
-   </div>
-   
-    <!--  
+    <div class="main " *ngFor="let i of array">
+
+        <div class="contact">
+            <div class="contact-inner">
+                <img [src]="i.PhotoUrl" alt="not found">
+                <h2>Contact</h2>
+                <div class="line"></div>
+                <div class="information">
+                    <h5>Phone</h5>
+                    <p>{{i.phoneNumber}}</p>
+                </div>
+                <div class="line"></div>
+                <div class="information">
+                    <h5>Email</h5>
+                    <p>{{i.email}}</p>
+                </div>
+                <div class="line"></div>
+                <div class="information">
+                    <h5>Address</h5>
+                    <p>{{i.address}}</p>
+                </div>
+                <div class="line"></div>
+                <div class="information">
+                    <h5>Phone</h5>
+                    <p>{{i.phoneNumber}}</p>
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="about-person">
+            <div class="template">
+                <h1>{{i.name}}</h1>
+                <p class="workdesc">{{i.companyWorkDescription}}</p>
+                <p>{{i.aboutme}}</p>
+            </div>
+        </div>
+
+        <!--  
     <p>{{i.age}}</p>    
-    --> 
-</div>
+    -->
+    </div>
 </div>

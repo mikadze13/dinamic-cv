@@ -34,23 +34,26 @@ export class CvprofileComponent implements OnInit {
       this.show = false
     }
   }
-  red() {
-    const inp1 = document.querySelector('.red') as HTMLInputElement
-    this.range1 = inp1.valueAsNumber
-    return this.range1
+  color(){
+
   }
-  green() {
-    const inp2 = document.querySelector('.green') as HTMLInputElement
-    this.range2 = inp2.valueAsNumber
-    return this.range2
-  }
-  blue() {
-    const inp3 = document.querySelector('.blue') as HTMLInputElement
-    this.range3 = inp3.valueAsNumber
-    return this.range3
-  }
+  // red() {
+  //   const inp1 = document.querySelector('.red') as HTMLInputElement
+  //   this.range1 = inp1.valueAsNumber
+  //   return this.range1
+  // }
+  // green() {
+  //   const inp2 = document.querySelector('.green') as HTMLInputElement
+  //   this.range2 = inp2.valueAsNumber
+  //   return this.range2
+  // }
+  // blue() {
+  //   const inp3 = document.querySelector('.blue') as HTMLInputElement
+  //   this.range3 = inp3.valueAsNumber
+  //   return this.range3
+  // }
   backgroundColorRange() {
-    this.backgroundColor = `rgb(${this.red()}, ${this.blue()}, ${this.green()})` 
+    this.backgroundColor = `rgb(${this.color()})` 
     const el = this.el.nativeElement.querySelector('.main');
     this.renderer.setStyle(el, 'background-color', this.backgroundColor); 
   }
