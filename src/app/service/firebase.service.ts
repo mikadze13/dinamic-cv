@@ -84,7 +84,7 @@ export class FirebaseService {
       this.isLoggedIn = true; 
         
       localStorage.setItem('user', JSON.stringify(res.user?.uid))
-      this.router.navigate(['/cvmaker'])
+      
        
     }, err => {
       err.error

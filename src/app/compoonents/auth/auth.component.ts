@@ -81,7 +81,8 @@ export class AuthComponent implements OnInit {
   async SignInWithFacebook() {
     await this.firebaseService.FacebookSignIn()
     if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true; 
+      this.isSignedIn = true;
+      this.router.navigate(['/cvmaker'])
     }
   }
 // sign in with guthub
