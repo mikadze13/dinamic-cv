@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
-import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, AuthCredential } from 'firebase/auth';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
   isLoggedIn = false
-  constructor(public firebaseAuth: AngularFireAuth) { }
+  constructor(public firebaseAuth: AngularFireAuth,private router: Router) { }
 
   // sign in 
   async signin(email: string, password: string) {
@@ -80,8 +81,11 @@ export class FirebaseService {
   // sign in with facebook
   FacebookSignIn() {
     return this.firebaseAuth.signInWithPopup(new FacebookAuthProvider()).then(res => {
-      this.isLoggedIn = true;
+      this.isLoggedIn = true; 
+        
       localStorage.setItem('user', JSON.stringify(res.user?.uid))
+      this.router.navigate(['/cvmaker'])
+       
     }, err => {
       err.error
     })
