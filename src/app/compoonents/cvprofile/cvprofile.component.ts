@@ -22,8 +22,7 @@ export class CvprofileComponent implements OnInit {
 
     })
 
-  }
-
+  } 
   changeStyle() {
     this.count++
     if (this.count % 2 != 0) {

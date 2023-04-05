@@ -14,7 +14,8 @@ export class CvmakerComponent {
   jobForm!: FormGroup;
   show:boolean=false;
   selectedFile!:File; 
- 
+  imageUrl!:string
+  imgAddres:any
   @Output() isLogout = new EventEmitter<void>()
   @Output()  SendInfo:EventEmitter<any> = new EventEmitter()
   // Form initialization
@@ -107,7 +108,7 @@ export class CvmakerComponent {
       age:this.jobForm.value.jobs[0].Age,
       address:this.jobForm.value.jobs[0].Address,
       aboutme:this.jobForm.value.jobs[0].AboutMe,
-      PhotoUrl:this.jobForm.value.jobs[0].Url,
+      PhotoUrl:this.imgAddres,
       phoneNumber:this.jobForm.value.jobs[0].phoneNumber,
       email:this.jobForm.value.jobs[0].email,
       companyName:this.jobForm.value.jobs[0].companyName,
@@ -129,8 +130,14 @@ export class CvmakerComponent {
     this.selectedFile = <File>event.target.files[0];
   }
   onUpload(){
-    const fd = new FormData();
-    fd.append('image',this.selectedFile, this.selectedFile.name)
+    const reader = new FileReader()
+    // const fd = new FormData();
+    reader.readAsDataURL(this.selectedFile);
+   this.imgAddres = reader.onload = () =>{
+      this.imageUrl = reader.result as string;
+      // this.router.navigate(['/cvprofile'],{state:{imageUrl:this.imageUrl}})
+    }
+    // fd.append('image',this.selectedFile, this.selectedFile.name)
  
   }
 

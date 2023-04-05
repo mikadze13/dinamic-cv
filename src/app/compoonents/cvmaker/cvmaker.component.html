@@ -39,7 +39,7 @@
 
             <div class="form-group mt-2">
               <label for="">Image url</label>
-              <input type="text" class="form-control" formControlName="Url" placeholder="Image url">
+              <input type="file" class="form-control" formControlName="Url" placeholder="Image url" (change)="onFileSelected($event)">
             </div>
 
             <div class="form-group mt-2">

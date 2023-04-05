@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class FirebaseService {
   isLoggedIn = false
-  constructor(public firebaseAuth: AngularFireAuth,private router: Router) { }
+  constructor(public firebaseAuth: AngularFireAuth, private router: Router) { }
 
   // sign in 
   async signin(email: string, password: string) {
@@ -35,6 +35,17 @@ export class FirebaseService {
           alert(errorMessage);
         }
       });
+  }
+
+  // sign in with google
+  GoogleSignIn() {
+    return this.firebaseAuth.signInWithPopup(new GoogleAuthProvider()).then(res => {
+      this.isLoggedIn = true;
+      localStorage.setItem('user', JSON.stringify(res.user?.uid))
+      console.log(localStorage.setItem('user', JSON.stringify(res.user?.uid)))
+    }, err => {
+      err.error
+    })
   }
 
   // signup
@@ -68,18 +79,10 @@ export class FirebaseService {
     localStorage.removeItem('user')
   }
 
-  // sign in with google
-  GoogleSignIn() {
-    return this.firebaseAuth.signInWithPopup(new GoogleAuthProvider()).then(res => {
-      this.isLoggedIn = true;
-      localStorage.setItem('user', JSON.stringify(res.user?.uid))
-    }, err => {
-      err.error
-    })
-  }
 
-   
-  
+
+
+
 
   isAuthenticated() {
     if (this.isLoggedIn == true) {
