@@ -5,7 +5,9 @@ Here you can build your CV
 
 
  
-     
+## Screenshots
+
+![App Screenshot](./src/assets/images/app-screenshot.png)
 
 ## Links
 - Live site URL - [Live site](https://dinamic-cv-hxn5.vercel.app/)

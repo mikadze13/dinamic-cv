@@ -53,7 +53,7 @@ export class AuthComponent implements OnInit {
   async onSignup(email: string, password: string) {
     this.UserInfo.reset()
     await this.firebaseService.signup(email, password)
-    if (this.firebaseService.isLoggedIn) {
+    if (this.firebaseService.isAuthenticated()) {
       this.isSignedIn = true;
       this.router.navigate(['/cvmaker']);
     }
@@ -62,7 +62,7 @@ export class AuthComponent implements OnInit {
   // sign in
   async onSignin(email: string, password: string) {
     await this.firebaseService.signin(email, password)
-    if (this.firebaseService.isLoggedIn) {
+    if (this.firebaseService.isAuthenticated()) {
       this.isSignedIn = true;
       this.router.navigate(['/cvmaker']);
     }
@@ -71,8 +71,8 @@ export class AuthComponent implements OnInit {
   async signInWithGoogle() {
 
     await this.firebaseService.GoogleSignIn()
-    if (this.firebaseService.isLoggedIn) {
-      this.isSignedIn = true;
+    if (this.firebaseService.isAuthenticated()) {
+      this.isSignedIn = true;   
       this.router.navigate(['/cvmaker']);
     }
 

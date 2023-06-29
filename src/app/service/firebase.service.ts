@@ -18,6 +18,7 @@ export class FirebaseService {
         this.isLoggedIn = true;
         console.log(res)
         localStorage.setItem('user', JSON.stringify(res.user))
+        localStorage.getItem(JSON.stringify(res.user))
       }).catch((error) => {
         // Handle errors here
         const errorCode = error.code;
@@ -42,6 +43,7 @@ export class FirebaseService {
     return this.firebaseAuth.signInWithPopup(new GoogleAuthProvider()).then(res => {
       this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user?.uid))
+      localStorage.getItem(JSON.stringify(res.user?.uid))
       console.log(localStorage.setItem('user', JSON.stringify(res.user?.uid)))
     }, err => {
       err.error
@@ -54,7 +56,7 @@ export class FirebaseService {
       .then(res => {
         this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user))
-
+        localStorage.getItem(JSON.stringify(res.user))
       }).catch((error) => {
         // Handle errors here
         const errorCode = error.code;
